@@ -112,7 +112,7 @@ esp_err_t PsychicHttpServer::start()
 
   // starting without network will crash us
   // isConnected() now checks all network interfaces including co-processor connections
-  if (!skipNetworkCheck && !isConnected()) {
+  if (!isConnected()) {
     ESP_LOGE(PH_TAG, "Server start failed - no network interface available.");
     return ESP_FAIL;
   }
